@@ -1,0 +1,62 @@
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html, body { width: 100%; height: 100%; overflow: hidden; background: #0b0e1a;
+  font-family: 'Segoe UI', 'Helvetica Neue', Arial, sans-serif; color: #f2f2f2; }
+#stage { position: relative; width: 100vw; height: 100vh; }
+#game { position: absolute; inset: 0; width: 100%; height: 100%; display: block;
+  image-rendering: auto; cursor: crosshair; }
+#minimap { position: absolute; top: 14px; right: 14px; width: 200px; height: 150px;
+  border: 2px solid rgba(255,255,255,.55); border-radius: 6px;
+  background: rgba(8,12,24,.85); z-index: 5; }
+#hud { position: absolute; inset: 0; pointer-events: none; z-index: 4;
+  text-shadow: 0 1px 3px rgba(0,0,0,.9); }
+#hud-top-left { position: absolute; top: 14px; left: 16px; }
+#stars { font-size: 26px; letter-spacing: 4px; color: #ffd94d; min-height: 32px; }
+#stars .dim { color: rgba(255,255,255,.25); }
+#cash { font-size: 26px; font-weight: 800; color: #7dff9b; }
+#respect { font-size: 14px; letter-spacing: 2px; color: #ffd94d; text-transform: uppercase; }
+#hud-top-center { position: absolute; top: 12px; left: 50%; transform: translateX(-50%);
+  text-align: center; max-width: 560px; }
+#mission-title { font-size: 17px; font-weight: 800; letter-spacing: 1px; color: #ffd94d; }
+#mission-text { font-size: 15px; color: #fff; }
+#mission-timer { font-size: 20px; font-weight: 800; color: #ff5a7a; }
+#district { position: absolute; left: 16px; bottom: 118px; font-size: 22px; font-weight: 800;
+  letter-spacing: 2px; color: rgba(255,255,255,.92); }
+#hud-bottom-left { position: absolute; left: 16px; bottom: 16px; width: 260px; }
+.bar { position: relative; height: 18px; margin-top: 6px; background: rgba(0,0,0,.55);
+  border: 1px solid rgba(255,255,255,.4); border-radius: 3px; overflow: hidden; }
+.bar > div { height: 100%; transition: width .15s; }
+#health-fill { background: linear-gradient(90deg, #2ecc71, #7dff9b); width: 100%; }
+#armor-fill { background: linear-gradient(90deg, #3498db, #7dc4ff); width: 0%; }
+.bar span { position: absolute; inset: 0; text-align: center; font-size: 12px;
+  font-weight: 700; line-height: 18px; color: #fff; }
+#hud-bottom-right { position: absolute; right: 16px; bottom: 16px; text-align: right; }
+#weapon-name { font-size: 20px; font-weight: 800; letter-spacing: 1px; }
+#ammo { font-size: 16px; color: #ffd94d; }
+#speed { font-size: 26px; font-weight: 800; }
+#radio { font-size: 13px; letter-spacing: 2px; color: #ff9ec4; }
+#toast { position: absolute; left: 50%; bottom: 150px; transform: translateX(-50%);
+  font-size: 20px; font-weight: 800; color: #ffd94d; text-align: center; opacity: 0;
+  transition: opacity .3s; }
+#hint { position: absolute; left: 50%; bottom: 96px; transform: translateX(-50%);
+  font-size: 14px; color: rgba(255,255,255,.85); text-align: center; }
+.overlay { position: absolute; inset: 0; z-index: 10; display: flex;
+  align-items: center; justify-content: center;
+  background: linear-gradient(160deg, rgba(10,14,34,.92), rgba(60,12,40,.88)); }
+.overlay.hidden { display: none; }
+.panel { width: min(640px, 92vw); text-align: center; padding: 36px 30px;
+  background: rgba(0,0,0,.45); border: 1px solid rgba(255,217,77,.5);
+  border-radius: 12px; }
+.panel h1 { font-size: 56px; letter-spacing: 6px; color: #ffd94d;
+  text-shadow: 0 0 24px rgba(255,90,122,.6); }
+.tagline { font-size: 16px; letter-spacing: 3px; color: #ff9ec4; margin: 6px 0 18px; }
+.story { font-size: 16px; line-height: 1.6; color: #e8e8e8; margin-bottom: 22px; }
+.buttons { display: flex; flex-direction: column; gap: 10px; align-items: center; }
+.buttons button { pointer-events: auto; cursor: pointer; width: 280px; padding: 12px 0;
+  font-size: 17px; font-weight: 800; letter-spacing: 2px; color: #111;
+  background: linear-gradient(180deg, #ffd94d, #f5a623); border: none; border-radius: 6px; }
+.buttons button:hover { filter: brightness(1.12); }
+.foot { margin-top: 20px; font-size: 13px; color: rgba(255,255,255,.7); }
+#help { text-align: left; margin-top: 18px; font-size: 14px; line-height: 1.6;
+  color: #ddd; border-top: 1px solid rgba(255,255,255,.25); padding-top: 14px; }
+#help.hidden { display: none; }
+#help p { margin-bottom: 8px; }

@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>SOLMAR BAY — Open World Crime Game</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div id="stage">
+  <canvas id="game" width="1280" height="800"></canvas>
+  <canvas id="minimap" width="200" height="150"></canvas>
+  <div id="hud">
+    <div id="hud-top-left">
+      <div id="stars"></div>
+      <div id="cash">$0</div>
+      <div id="respect">Street Punk</div>
+    </div>
+    <div id="hud-top-center">
+      <div id="mission-title"></div>
+      <div id="mission-text"></div>
+      <div id="mission-timer"></div>
+    </div>
+    <div id="district"></div>
+    <div id="hud-bottom-left">
+      <div class="bar"><div id="health-fill"></div><span id="health-text"></span></div>
+      <div class="bar"><div id="armor-fill"></div><span id="armor-text"></span></div>
+    </div>
+    <div id="hud-bottom-right">
+      <div id="weapon-name">FISTS</div>
+      <div id="ammo"></div>
+      <div id="speed">0 mph</div>
+      <div id="radio">Solmar FM</div>
+    </div>
+    <div id="toast"></div>
+    <div id="hint"></div>
+  </div>
+  <div id="menu" class="overlay">
+    <div class="panel">
+      <h1>SOLMAR BAY</h1>
+      <p class="tagline">An island city that never sleeps.</p>
+      <p class="story">You are <b>Rio</b>, a wheelman with nothing but a fast pair of
+      hands and a faster car. Luna Reyes runs La Luna Bar and the jobs that
+      come with it. Eight jobs stand between you and the Torre bank —
+      and the Bay Police Department stands between you and all of it.</p>
+      <div class="buttons">
+        <button id="btn-continue">CONTINUE</button>
+        <button id="btn-new">NEW GAME</button>
+        <button id="btn-help">HOW TO PLAY</button>
+      </div>
+      <p class="foot">WASD move / drive &nbsp;·&nbsp; mouse aim &nbsp;·&nbsp; click shoot
+      &nbsp;·&nbsp; E enter car &nbsp;·&nbsp; Space handbrake &nbsp;·&nbsp; R radio</p>
+      <div id="help" class="hidden">
+        <p><b>On foot:</b> WASD to walk, Shift to sprint, mouse to aim, click to
+        shoot, E to steal the nearest car, 1–4 to switch weapons.</p>
+        <p><b>Driving:</b> W accelerate, S brake / reverse, A/D steer, Space
+        handbrake, H horn, E to get out.</p>
+        <p><b>Heat:</b> stealing cars, shooting and speeding near cops raises
+        your wanted level. Hide to cool off, or pay for a paint job at
+        Spray &amp; Shine to lose the cops.</p>
+        <p><b>Missions:</b> follow the yellow marker. Talk to Luna at La Luna
+        Bar to start the next job. The game autosaves after every job.</p>
+      </div>
+    </div>
+  </div>
+  <div id="pause" class="overlay hidden">
+    <div class="panel">
+      <h1>PAUSED</h1>
+      <div class="buttons">
+        <button id="btn-resume">RESUME</button>
+        <button id="btn-save">SAVE GAME</button>
+        <button id="btn-quit">QUIT TO MENU</button>
+      </div>
+      <p class="foot">P or Esc to resume</p>
+    </div>
+  </div>
+  <div id="dead" class="overlay hidden">
+    <div class="panel">
+      <h1 id="dead-title">WASTED</h1>
+      <p class="story" id="dead-text">The city keeps moving without you.</p>
+      <div class="buttons">
+        <button id="btn-retry">TRY AGAIN</button>
+        <button id="btn-dead-menu">QUIT TO MENU</button>
+      </div>
+    </div>
+  </div>
+</div>
+<script type="module" src="./src/main.js"></script>
+</body>
+</html>
